@@ -3,8 +3,10 @@ services:
     name: n8n
     env: node
     plan: free
-    buildCommand: npm install
-    startCommand: npm run start
+    buildCommand: |
+      npm install -g pnpm
+      pnpm install
+    startCommand: pnpm run start
     envVars:
       - key: N8N_BASIC_AUTH_ACTIVE
         value: true
@@ -19,4 +21,4 @@ services:
       - key: N8N_PROTOCOL
         value: https
       - key: WEBHOOK_URL
-        value: https://n8n.onrender.com 
+        value: https://n8n.onrender.com
