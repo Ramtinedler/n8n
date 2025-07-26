@@ -6,6 +6,7 @@ services:
     buildCommand: |
       npm install -g pnpm
       pnpm install
+      pnpm run build
     startCommand: pnpm run start
     envVars:
       - key: N8N_BASIC_AUTH_ACTIVE
@@ -22,3 +23,7 @@ services:
         value: https
       - key: WEBHOOK_URL
         value: https://n8n.onrender.com
+      - key: NODE_ENV
+        value: production
+      - key: N8N_DISABLE_PRODUCTION_MAIN_PROCESS
+        value: false 
